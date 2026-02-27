@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hafsoo Fragrance | Luxury Fragrances</title>
+    <meta name="description" content="Premium Attars & Perfumes. Order via WhatsApp. Discover the essence of luxury with Hafsoo Fragrance.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #004d40; /* Emerald Green */
+            --accent-color: #d4af37;  /* Gold */
+            --bg: #f9fbf9;
+            --text-dark: #1a1a1a;
+            --text-light: #666;
+            --white: #ffffff;
+            --shadow: 0 10px 30px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-dark);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, .brand-font {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* --- Navbar --- */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        .cart-icon {
+            position: relative;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: var(--accent-color);
+            color: var(--white);
+            font-size: 0.7rem;
+            padding: 2px 6px;
+            border-radius: 50%;
+            font-weight: bold;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 90vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('C:/Users/Abbas Fahim/.gemini/antigravity/brain/884cd7da-868b-45ec-be09-56d2e194e6f4/hero_fragrance_luxury_1772045967486.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            padding: 0 5%;
+            margin-top: 0;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .btn-primary {
+            background: var(--accent-color);
+            color: var(--white);
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background: #b8962d;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+        }
+
+        /* --- Sections --- */
+        section {
+            padding: 5rem 5%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            position: relative;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            width: 50%;
+            height: 2px;
+            background: var(--accent-color);
+            position: absolute;
+            bottom: -10px;
+            left: 25%;
+        }
+
+        /* --- Product Grid --- */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-bottom: 1px solid #eee;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .product-category {
+            font-size: 0.8rem;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-title {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-price {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .stock-status {
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .stock-in { color: #2e7d32; }
+        .stock-low { color: #f57c00; font-weight: bold; }
+
+        .btn-add {
+            width: 100%;
+            padding: 0.8rem;
+            background: var(--primary-color);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .btn-add:hover {
+            background: #00332a;
+        }
+
+        /* --- Testimonials --- */
+        .testimonials {
+            background: #f0f4f0;
+        }
+
+        .testimonial-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            padding: 2.5rem;
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .tradition-style {
+            border: 3px double var(--accent-color);
+            background: #fffcf5;
+        }
+
+        .tradition-style h4 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .modern-style {
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .stars {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        /* --- Footer --- */
+        footer {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 4rem 5% 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto 3rem;
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo span { color: var(--accent-color); }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            color: var(--white);
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        /* --- Cart Drawer --- */
+        .cart-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            display: none;
+            z-index: 2000;
+        }
+
+        .cart-drawer {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 100%;
+            max-width: 400px;
+            height: 100%;
+            background: var(--white);
+            z-index: 2001;
+            transition: 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+        }
+
+        .cart-drawer.active {
+            right: 0;
+        }
+
+        .cart-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .close-cart {
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .cart-items {
+            flex: 1;
+            overflow-y: auto;
+            padding: 1.5rem;
+        }
+
+        .cart-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #f9f9f9;
+        }
+
+        .cart-item-img {
+            width: 70px;
+            height: 70px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .cart-item-info {
+            flex: 1;
+        }
+
+        .cart-item-title {
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .cart-item-price {
+            color: var(--accent-color);
+            font-weight: 700;
+        }
+
+        .remove-item {
+            color: #ff5252;
+            cursor: pointer;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+
+        .cart-footer {
+            padding: 1.5rem;
+            border-top: 1px solid #eee;
+            background: #fafafa;
+        }
+
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-checkout {
+            width: 100%;
+            padding: 1rem;
+            background: var(--primary-color);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        /* --- Upsell Modal --- */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 3000;
+            padding: 1.5rem;
+        }
+
+        .modal-content {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 20px;
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            animation: modalPop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @keyframes modalPop {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .upsell-tag {
+            background: #ffecb3;
+            color: #ff8f00;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .upsell-img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+        }
+
+        .modal-footer {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .btn-outline {
+            flex: 1;
+            padding: 0.8rem;
+            border: 2px solid var(--primary-color);
+            background: transparent;
+            color: var(--primary-color);
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .btn-special {
+            flex: 1;
+            padding: 0.8rem;
+            background: var(--primary-color);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        /* --- Checkout Form --- */
+        .checkout-form {
+            text-align: left;
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        /* --- Animations --- */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            nav { padding: 1rem 5%; }
+            .section-title h2 { font-size: 2rem; }
+            .cart-drawer { max-width: 320px; }
+            .modal-content { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <a href="#" class="logo">Hafsoo Fragrance <span> The Premium One</span></a>
+        <div class="cart-icon" onclick="toggleCart()">
+            🛒 <span class="cart-count" id="cart-count">0</span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Legacy of Fragrance</h1>
+        <p>Experience the finest blend of traditional Attars and modern Perfumes crafted for royalty.</p>
+        <a href="#products" class="btn-primary">Explore Collection</a>
+    </div>
+
+    <!-- Featured Products -->
+    <section id="products">
+        <div class="section-title">
+            <h2>Luxury Collection</h2>
+            <p>Handpicked scents for the connoisseur</p>
+        </div>
+        <div class="product-grid" id="product-grid">
+            <!-- Products will be injected by JS -->
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="section-title">
+            <h2>Verified Reviews</h2>
+            <p>What our perfume enthusiasts say</p>
+        </div>
+        <div class="testimonial-container">
+            <!-- Traditional Praise -->
+            <div class="testimonial-card tradition-style">
+                <h4>Traditional Excellence</h4>
+                <p class="testimonial-text">"MashaAllah, hafsoo fragrance ki khushbu mein wo pakeezgi aur miyar hai jo aaj kal nayab hai. Inka Oudh aur Attar dono hi lutf-e-bala hain. Bohat sari duayen aur barkat ki tamanna!"</p>
+                <div class="testimonial-author">Sikandar Hayat Baba</div>
+                <div style="font-size: 0.8rem; color: var(--accent-color); margin-top: 5px;">Spiritual Scholar</div>
+            </div>
+
+            <!-- Modern Review -->
+            <div class="testimonial-card modern-style">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text" style="font-family: 'Outfit', sans-serif; font-style: normal;">"Absolutely impressed by the longevity and projection of these scents. The 'Oudh Al-Hani' is a masterpiece. Highly recommended for those who appreciate premium quality at an affordable price!"</p>
+                <div class="testimonial-author">Jameel Khan</div>
+                <div style="font-size: 0.8rem; color: var(--text-light); margin-top: 5px;">Professional Reviewer</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Hafsoo <span>Fragrance</span></div>
+            <p>The art of perfume making is a journey of the soul. We bring you the most exquisite scents from the heart of tradition.</p>
+            <div class="social-links">
+                <a href="#">FB</a>
+                <a href="#">IG</a>
+                <a href="#">YT</a>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 Hafsoo Fragrance. All Rights Reserved. | WhatsApp: 03159831334
+        </div>
+    </footer>
+
+    <!-- Cart Drawer -->
+    <div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
+    <div class="cart-drawer" id="cart-drawer">
+        <div class="cart-header">
+            <h3>Your Shopping Cart</h3>
+            <span class="close-cart" onclick="toggleCart()">&times;</span>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Cart items will be injected here -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-price">Rs. 0</span>
+            </div>
+            <button class="btn-checkout" onclick="openCheckout()">Order via WhatsApp</button>
+        </div>
+    </div>
+
+    <!-- Upsell Modal -->
+    <div class="modal" id="upsell-modal">
+        <div class="modal-content">
+            <div class="upsell-tag">Special Offer!</div>
+            <h2>Wait! Enhance your Scent</h2>
+            <p>Add our best-selling <strong>6ml Hafsoo Fragrance Attar</strong> to your order for just <strong>Rs. 450</strong> (Extra 25% Off)!</p>
+            <img src="C:/Users/Abbas Fahim/.gemini/antigravity/brain/884cd7da-868b-45ec-be09-56d2e194e6f4/attar_collection_premium_1772046012406.png" class="upsell-img" alt="Attar">
+            <div class="modal-footer">
+                <button class="btn-outline" onclick="closeUpsell(false)">No, Thanks</button>
+                <button class="btn-special" onclick="closeUpsell(true)">Yes, Add it!</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="modal" id="checkout-modal">
+        <div class="modal-content" style="max-width: 600px;">
+            <span class="close-cart" style="position: absolute; right: 20px; top: 15px;" onclick="closeCheckout()">&times;</span>
+            <h2 style="margin-bottom: 2rem; color: var(--primary-color);">Complete Your Order</h2>
+            <form class="checkout-form" id="checkout-form">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="cust-name" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" id="cust-phone" placeholder="e.g. 03001234567" required>
+                </div>
+                <div class="form-group">
+                    <label>Full Address</label>
+                    <textarea id="cust-address" rows="3" placeholder="House #, Street, City, Landmark" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Payment Method</label>
+                    <select id="payment-method">
+                        <option value="Cash on Delivery (COD)">Cash on Delivery (COD)</option>
+                        <option value="Bank Transfer/EasyPaisa">Bank Transfer/EasyPaisa</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-primary" style="width: 100%;">Confirm via WhatsApp</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // --- Data ---
+        const products = [
+            {
+                id: 1,
+                title: "Oudh Al-Hani",
+                category: "Premium Oudh",
+                price: 4500,
+                stock: "Only 3 Left",
+                isLowStock: true,
+                image: "C:/Users/Abbas Fahim/.gemini/antigravity/brain/884cd7da-868b-45ec-be09-56d2e194e6f4/men_perfume_sleek_1772046064343.png"
+            },
+            {
+                id: 2,
+                title: "Sultani Attar",
+                category: "Traditional",
+                price: 1800,
+                stock: "In Stock",
+                isLowStock: false,
+                image: "C:/Users/Abbas Fahim/.gemini/antigravity/brain/884cd7da-868b-45ec-be09-56d2e194e6f4/attar_collection_premium_1772046012406.png"
+            },
+            {
+                id: 3,
+                title: "Emerald Night Perfume",
+                category: "Lux EDP",
+                price: 5200,
+                stock: "In Stock",
+                isLowStock: false,
+                image: "C:/Users/Abbas Fahim/.gemini/antigravity/brain/9be7b6c9-fbb2-442d-a0c1-946a8d18c3cd/luxury_hero_fragrance_1772051478532.png"
+            },
+            {
+                id: 4,
+                title: "Royal White Musk",
+                category: "Signature",
+                price: 1200,
+                stock: "In Stock",
+                isLowStock: false,
+                image: "C:/Users/Abbas Fahim/.gemini/antigravity/brain/884cd7da-868b-45ec-be09-56d2e194e6f4/men_perfume_sleek_1772046064343.png"
+            }
+        ];
+
+        const upsellProduct = {
+            id: 'upsell',
+            title: "Musk-e-Hani Attar (6ml)",
+            price: 450
+        };
+
+        let cart = [];
+
+        // --- Core Functions ---
+
+        function initProducts() {
+            const grid = document.getElementById('product-grid');
+            grid.innerHTML = products.map(p => `
+                <div class="product-card">
+                    <img src="${p.image}" class="product-image" alt="${p.title}">
+                    <div class="product-info">
+                        <span class="product-category">${p.category}</span>
+                        <h3 class="product-title">${p.title}</h3>
+                        <div class="product-price">Rs. ${p.price}</div>
+                        <span class="stock-status ${p.isLowStock ? 'stock-low' : 'stock-in'}">${p.stock}</span>
+                        <button class="btn-add" onclick="handleOrderClick(${p.id})">ORDER NOW</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Handle 'Order Now' - Opens Upsell first
+        let pendingProductId = null;
+        function handleOrderClick(productId) {
+            pendingProductId = productId;
+            document.getElementById('upsell-modal').style.display = 'flex';
+        }
+
+        function closeUpsell(addBonus) {
+            document.getElementById('upsell-modal').style.display = 'none';
+            
+            // Add original product
+            const product = products.find(p => p.id === pendingProductId);
+            if (product) addToCart(product);
+
+            // Add bonus if requested
+            if (addBonus) {
+                addToCart(upsellProduct);
+            }
+            
+            toggleCart(true); // Show floating cart drawer
+            pendingProductId = null;
+        }
+
+        function addToCart(product) {
+            cart.push(product);
+            updateCartUI();
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const cartItemsContainer = document.getElementById('cart-items');
+            const cartCount = document.getElementById('cart-count');
+            const cartTotal = document.getElementById('cart-total-price');
+
+            cartCount.innerText = cart.length;
+            
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<p style="text-align:center; color:#999; margin-top:2rem;">Your cart is empty.</p>';
+                cartTotal.innerText = 'Rs. 0';
+                return;
+            }
+
+            let total = 0;
+            cartItemsContainer.innerHTML = cart.map((item, index) => {
+                total += item.price;
+                return `
+                    <div class="cart-item">
+                        <img src="${item.image || 'C:/Users/Abbas Fahim/.gemini/antigravity/brain/884cd7da-868b-45ec-be09-56d2e194e6f4/attar_collection_premium_1772046012406.png'}" class="cart-item-img">
+                        <div class="cart-item-info">
+                            <div class="cart-item-title">${item.title}</div>
+                            <div class="cart-item-price">Rs. ${item.price}</div>
+                            <span class="remove-item" onclick="removeFromCart(${index})">Remove</span>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            cartTotal.innerText = `Rs. ${total}`;
+        }
+
+        function toggleCart(forceOpen = false) {
+            const drawer = document.getElementById('cart-drawer');
+            const overlay = document.getElementById('cart-overlay');
+            
+            if (forceOpen || !drawer.classList.contains('active')) {
+                drawer.classList.add('active');
+                overlay.style.display = 'block';
+            } else {
+                drawer.classList.remove('active');
+                overlay.style.display = 'none';
+            }
+        }
+
+        // --- Checkout & WhatsApp ---
+
+        function openCheckout() {
+            if (cart.length === 0) {
+                alert("Your cart is empty!");
+                return;
+            }
+            document.getElementById('checkout-modal').style.display = 'flex';
+        }
+
+        function closeCheckout() {
+            document.getElementById('checkout-modal').style.display = 'none';
+        }
+
+        document.getElementById('checkout-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('cust-name').value;
+            const phone = document.getElementById('cust-phone').value;
+            const address = document.getElementById('cust-address').value;
+            const payment = document.getElementById('payment-method').value;
+
+            // Build Order Summary
+            let itemsText = cart.map(item => `- ${item.title} (Rs. ${item.price})`).join('%0A');
+            let total = cart.reduce((sum, item) => sum + item.price, 0);
+
+            const waNumber = "923159831334";
+            const message = `*NEW ORDER - UHafsoo Fragrance*%0A%0A` +
+                            `*Customer:* ${name}%0A` +
+                            `*Phone:* ${phone}%0A` +
+                            `*Address:* ${address}%0A%0A` +
+                            `*Products:*%0A${itemsText}%0A%0A` +
+                            `*Total Price:* Rs. ${total}%0A` +
+                            `*Payment Method:* ${payment}%0A%0A` +
+                            `Please confirm my order. Thank you!`;
+
+            window.open(`https://wa.me/${waNumber}?text=${message}`, '_blank');
+        });
+
+        // Initialize
+        initProducts();
+    </script>
+</body>
+</html>
