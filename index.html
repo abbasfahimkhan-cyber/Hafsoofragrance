@@ -1,888 +1,595 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hafsoo Fragrance | Luxury Fragrances</title>
-    <meta name="description" content="Premium Attars & Perfumes. Order via WhatsApp. Discover the essence of luxury with Hafsoo Fragrance.">
-    
-    <!-- Google Fonts -->
+    <title>Hafsoo Fragrance | Luxury Premium Collection</title>
+
+    <!-- Meta Tags for SEO -->
+    <meta name="description"
+        content="Discover the finest traditional Attars and modern Perfumes at Hafsoo Fragrance. Experience luxury with our exclusive collection.">
+    <meta name="keywords" content="Fragrance, Perfume, Attar, Luxury, Oudh, Traditional Scent">
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
     <style>
-        :root {
-            --primary-color: #004d40; /* Emerald Green */
-            --accent-color: #d4af37;  /* Gold */
-            --bg: #f9fbf9;
-            --text-dark: #1a1a1a;
-            --text-light: #666;
-            --white: #ffffff;
-            --shadow: 0 10px 30px rgba(0,0,0,0.1);
-            --transition: all 0.3s ease;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Outfit', sans-serif;
-        }
-
-        body {
-            background-color: var(--bg);
-            color: var(--text-dark);
-            overflow-x: hidden;
-            line-height: 1.6;
-        }
-
-        h1, h2, h3, .brand-font {
-            font-family: 'Playfair Display', serif;
-        }
-
-        /* --- Navbar --- */
-        nav {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1.5rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        /* Smart Upsell Modal Styles */
+        .upsell-modal {
             position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            text-decoration: none;
-            letter-spacing: 1px;
-        }
-
-        .logo span {
-            color: var(--accent-color);
-        }
-
-        .cart-icon {
-            position: relative;
-            cursor: pointer;
-            font-size: 1.5rem;
-        }
-
-        .cart-count {
-            position: absolute;
-            top: -10px;
-            right: -10px;
-            background: var(--accent-color);
-            color: var(--white);
-            font-size: 0.7rem;
-            padding: 2px 6px;
-            border-radius: 50%;
-            font-weight: bold;
-        }
-
-        /* --- Hero Section --- */
-        .hero {
-            height: 90vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('C:/Users/Abbas Fahim/.gemini/antigravity/brain/884cd7da-868b-45ec-be09-56d2e194e6f4/hero_fragrance_luxury_1772045967486.png');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: var(--white);
-            padding: 0 5%;
-            margin-top: 0;
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            animation: fadeInUp 1s ease-out;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin-bottom: 2rem;
-            animation: fadeInUp 1s ease-out 0.2s both;
-        }
-
-        .btn-primary {
-            background: var(--accent-color);
-            color: var(--white);
-            padding: 1rem 2.5rem;
-            border: none;
-            border-radius: 50px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            cursor: pointer;
-            transition: var(--transition);
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .btn-primary:hover {
-            background: #b8962d;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
-        }
-
-        /* --- Sections --- */
-        section {
-            padding: 5rem 5%;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            position: relative;
-            display: inline-block;
-            margin-bottom: 10px;
-        }
-
-        .section-title h2::after {
-            content: '';
-            width: 50%;
-            height: 2px;
-            background: var(--accent-color);
-            position: absolute;
-            bottom: -10px;
-            left: 25%;
-        }
-
-        /* --- Product Grid --- */
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .product-card {
-            background: var(--white);
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            position: relative;
-        }
-
-        .product-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .product-image {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            border-bottom: 1px solid #eee;
-        }
-
-        .product-info {
-            padding: 1.5rem;
-            text-align: center;
-        }
-
-        .product-category {
-            font-size: 0.8rem;
-            color: var(--accent-color);
-            text-transform: uppercase;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .product-title {
-            font-size: 1.4rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .product-price {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-        }
-
-        .stock-status {
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        .stock-in { color: #2e7d32; }
-        .stock-low { color: #f57c00; font-weight: bold; }
-
-        .btn-add {
-            width: 100%;
-            padding: 0.8rem;
-            background: var(--primary-color);
-            color: var(--white);
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: var(--transition);
-        }
-
-        .btn-add:hover {
-            background: #00332a;
-        }
-
-        /* --- Testimonials --- */
-        .testimonials {
-            background: #f0f4f0;
-        }
-
-        .testimonial-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .testimonial-card {
-            padding: 2.5rem;
-            background: var(--white);
-            border-radius: 20px;
-            box-shadow: var(--shadow);
-            position: relative;
-        }
-
-        .tradition-style {
-            border: 3px double var(--accent-color);
-            background: #fffcf5;
-        }
-
-        .tradition-style h4 {
-            color: var(--primary-color);
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .modern-style {
-            border-left: 5px solid var(--primary-color);
-        }
-
-        .stars {
-            color: var(--accent-color);
-            margin-bottom: 1rem;
-        }
-
-        .testimonial-text {
-            font-style: italic;
-            color: var(--text-light);
-            margin-bottom: 1.5rem;
-        }
-
-        .testimonial-author {
-            font-weight: 700;
-            color: var(--text-dark);
-        }
-
-        /* --- Footer --- */
-        footer {
-            background: var(--primary-color);
-            color: var(--white);
-            padding: 4rem 5% 2rem;
-            text-align: center;
-        }
-
-        .footer-content {
-            max-width: 800px;
-            margin: 0 auto 3rem;
-        }
-
-        .footer-logo {
-            font-size: 2rem;
-            font-family: 'Playfair Display', serif;
-            margin-bottom: 1rem;
-        }
-
-        .footer-logo span { color: var(--accent-color); }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-
-        .social-links a {
-            color: var(--white);
-            font-size: 1.5rem;
-            transition: var(--transition);
-        }
-
-        .social-links a:hover {
-            color: var(--accent-color);
-        }
-
-        .copyright {
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 2rem;
-            font-size: 0.9rem;
-            opacity: 0.7;
-        }
-
-        /* --- Cart Drawer --- */
-        .cart-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.5);
-            display: none;
-            z-index: 2000;
-        }
-
-        .cart-drawer {
-            position: fixed;
-            top: 0;
-            right: -400px;
-            width: 100%;
-            max-width: 400px;
-            height: 100%;
-            background: var(--white);
-            z-index: 2001;
-            transition: 0.4s ease;
-            display: flex;
-            flex-direction: column;
-            box-shadow: -10px 0 30px rgba(0,0,0,0.1);
-        }
-
-        .cart-drawer.active {
-            right: 0;
-        }
-
-        .cart-header {
-            padding: 1.5rem;
-            border-bottom: 1px solid #eee;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .close-cart {
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        .cart-items {
-            flex: 1;
-            overflow-y: auto;
-            padding: 1.5rem;
-        }
-
-        .cart-item {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid #f9f9f9;
-        }
-
-        .cart-item-img {
-            width: 70px;
-            height: 70px;
-            object-fit: cover;
-            border-radius: 5px;
-        }
-
-        .cart-item-info {
-            flex: 1;
-        }
-
-        .cart-item-title {
-            font-weight: 600;
-            font-size: 0.95rem;
-        }
-
-        .cart-item-price {
-            color: var(--accent-color);
-            font-weight: 700;
-        }
-
-        .remove-item {
-            color: #ff5252;
-            cursor: pointer;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-        }
-
-        .cart-footer {
-            padding: 1.5rem;
-            border-top: 1px solid #eee;
-            background: #fafafa;
-        }
-
-        .cart-total {
-            display: flex;
-            justify-content: space-between;
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-        }
-
-        .btn-checkout {
-            width: 100%;
-            padding: 1rem;
-            background: var(--primary-color);
-            color: var(--white);
-            border: none;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-        }
-
-        /* --- Upsell Modal --- */
-        .modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.7);
+            inset: 0;
+            background: rgba(2, 43, 34, 0.85);
             display: none;
             justify-content: center;
             align-items: center;
-            z-index: 3000;
-            padding: 1.5rem;
+            z-index: 4000;
+            padding: 20px;
+            backdrop-filter: blur(8px);
         }
 
-        .modal-content {
-            background: var(--white);
+        .upsell-content {
+            background: var(--bg-cream);
             padding: 2.5rem;
-            border-radius: 20px;
-            max-width: 500px;
+            border-radius: var(--radius-lg);
+            max-width: 450px;
             width: 100%;
             text-align: center;
             position: relative;
-            animation: modalPop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        @keyframes modalPop {
-            from { transform: scale(0.8); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--accent-gold-pale);
         }
 
         .upsell-tag {
-            background: #ffecb3;
-            color: #ff8f00;
+            background: var(--accent-gold);
+            color: var(--white);
             padding: 5px 15px;
-            border-radius: 20px;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
             font-weight: 700;
             display: inline-block;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            border-radius: 50px;
         }
 
         .upsell-img {
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 10px;
-            margin: 1.5rem 0;
+            width: 180px;
+            height: 180px;
+            object-fit: contain;
+            margin: 0 auto 1.5rem;
+            border-radius: var(--radius-md);
         }
 
-        .modal-footer {
-            display: flex;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .btn-outline {
-            flex: 1;
-            padding: 0.8rem;
-            border: 2px solid var(--primary-color);
-            background: transparent;
-            color: var(--primary-color);
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-        }
-
-        .btn-special {
-            flex: 1;
-            padding: 0.8rem;
-            background: var(--primary-color);
-            color: var(--white);
-            border: none;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-        }
-
-        /* --- Checkout Form --- */
-        .checkout-form {
-            text-align: left;
-        }
-
-        .form-group {
-            margin-bottom: 1.2rem;
-        }
-
-        .form-group label {
-            display: block;
+        .upsell-title {
+            font-size: 1.8rem;
+            color: var(--primary-dark);
             margin-bottom: 0.5rem;
-            font-weight: 600;
-            font-size: 0.9rem;
+            font-family: 'Playfair Display', serif;
         }
 
-        .form-group input, .form-group textarea, .form-group select {
-            width: 100%;
-            padding: 0.8rem;
+        .upsell-price {
+            font-size: 1.4rem;
+            color: var(--accent-gold);
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+
+        .upsell-btns {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+
+        .no-thanks {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            cursor: pointer;
+            text-decoration: underline;
+            margin-top: 10px;
+        }
+    </style>
+    <style>
+        /* AI Chat Assistant Styles */
+        .ai-chat-toggle {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--primary-dark);
+            color: var(--accent-gold);
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 10px 30px rgba(2, 43, 34, 0.4);
+            z-index: 5000;
+            transition: var(--transition-base);
+            border: 2px solid var(--accent-gold);
+            cursor: pointer;
+        }
+
+        .ai-chat-toggle:hover {
+            transform: scale(1.1);
+            background: var(--primary-light);
+        }
+
+        .ai-chat-window {
+            position: fixed;
+            bottom: 110px;
+            right: 30px;
+            width: 380px;
+            max-width: calc(100vw - 60px);
+            height: 550px;
+            max-height: calc(100vh - 150px);
+            background: var(--bg-cream);
+            border-radius: var(--radius-lg);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            z-index: 5001;
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            border: 1px solid var(--accent-gold-pale);
+            transition: var(--transition-base);
+        }
+
+        .ai-chat-header {
+            background: var(--primary-dark);
+            color: var(--white);
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--accent-gold);
+        }
+
+        .ai-chat-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            background: #fdfdfd;
+        }
+
+        .ai-bubble,
+        .user-bubble {
+            max-width: 85%;
+            padding: 12px 16px;
+            border-radius: 15px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            position: relative;
+        }
+
+        .ai-bubble {
+            align-self: flex-start;
+            background: #f0f0f0;
+            color: var(--text-main);
+            border-bottom-left-radius: 2px;
+        }
+
+        .user-bubble {
+            align-self: flex-end;
+            background: var(--primary-dark);
+            color: var(--white);
+            border-bottom-right-radius: 2px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .ai-typing {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            padding: 0 20px 10px;
+            display: none;
+            font-style: italic;
+        }
+
+        .ai-chat-input-area {
+            padding: 15px 20px;
+            background: var(--white);
+            border-top: 1px solid #eee;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .ai-chat-input-area input {
+            flex: 1;
             border: 1px solid #ddd;
-            border-radius: 8px;
-            font-size: 1rem;
+            padding: 12px 15px;
+            border-radius: 25px;
+            outline: none;
+            font-family: inherit;
         }
 
-        /* --- Animations --- */
+        .ai-chat-input-area input:focus {
+            border-color: var(--accent-gold);
+        }
+
+        .ai-chat-input-area button {
+            background: var(--primary-dark);
+            color: var(--accent-gold);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 0.3s;
+        }
+
+        .ai-chat-input-area button:hover {
+            background: var(--primary-light);
+        }
+
+        /* Proactive Greeting Bubbles */
+        .ai-greeting-popup {
+            position: fixed;
+            bottom: 105px;
+            right: 30px;
+            background: var(--primary-dark);
+            color: var(--white);
+            padding: 15px 20px;
+            border-radius: 20px;
+            border-bottom-right-radius: 5px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            z-index: 4999;
+            font-size: 0.9rem;
+            max-width: 250px;
+            display: none;
+            animation: fadeInUp 0.5s ease forwards;
+            border: 1px solid var(--accent-gold);
+        }
+
+        .ai-greeting-popup::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            right: 15px;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 10px solid var(--primary-dark);
+        }
+
         @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        /* --- Responsive --- */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            nav { padding: 1rem 5%; }
-            .section-title h2 { font-size: 2rem; }
-            .cart-drawer { max-width: 320px; }
-            .modal-content { padding: 1.5rem; }
+        .pulse-soft {
+            animation: softPulse 2s infinite;
+        }
+
+        @keyframes softPulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(197, 160, 89, 0.4);
+            }
+
+            70% {
+                box-shadow: 0 0 0 15px rgba(197, 160, 89, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(197, 160, 89, 0);
+            }
+        }
+
+        .typing-dots {
+            display: flex;
+            gap: 4px;
+            padding: 5px 0;
+        }
+
+        .dot {
+            width: 6px;
+            height: 6px;
+            background: var(--accent-gold);
+            border-radius: 50%;
+            animation: dotWave 1.4s infinite;
+        }
+
+        .dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes dotWave {
+
+            0%,
+            60%,
+            100% {
+                transform: translateY(0);
+            }
+
+            30% {
+                transform: translateY(-4px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .ai-chat-window {
+                bottom: 0;
+                right: 0;
+                width: 100%;
+                height: 100vh;
+                max-height: 100vh;
+                border-radius: 0;
+            }
+
+            .ai-chat-toggle {
+                bottom: 20px;
+                right: 20px;
+            }
         }
     </style>
 </head>
+
 <body>
 
-    <!-- Navbar -->
-    <nav>
-        <a href="#" class="logo">Hafsoo Fragrance <span> The Premium One</span></a>
-        <div class="cart-icon" onclick="toggleCart()">
-            🛒 <span class="cart-count" id="cart-count">0</span>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">Hafsoo <span>Fragrance</span></a>
+                <button class="cart-btn" data-action="toggle-cart" aria-label="View Cart">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
+                    <span class="cart-count">0</span>
+                </button>
+            </nav>
         </div>
-    </nav>
+    </header>
 
-    <!-- Hero Section -->
-    <div class="hero">
-        <h1>Legacy of Fragrance</h1>
-        <p>Experience the finest blend of traditional Attars and modern Perfumes crafted for royalty.</p>
-        <a href="#products" class="btn-primary">Explore Collection</a>
-    </div>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-subtitle">The Royal Essence</div>
+            <h1>Legacy of Fragrance</h1>
+            <p>Experience the finest blend of traditional Attars and modern Perfumes, crafted for those who value
+                elegance.</p>
+            <a href="#products" class="btn btn-primary">Explore Collection</a>
+        </section>
 
-    <!-- Featured Products -->
-    <section id="products">
-        <div class="section-title">
-            <h2>Luxury Collection</h2>
-            <p>Handpicked scents for the connoisseur</p>
+        <!-- Offer Banner -->
+        <div class="offer-banner">
+            <h3 class="serif-font">Limited Time Luxury Sale</h3>
+            <p>Exclusive offer ends in:</p>
+            <time class="timer" id="countdown">02:45:00</time>
         </div>
-        <div class="product-grid" id="product-grid">
-            <!-- Products will be injected by JS -->
-        </div>
-    </section>
 
-    <!-- Testimonials Section -->
-    <section class="testimonials">
-        <div class="section-title">
-            <h2>Verified Reviews</h2>
-            <p>What our perfume enthusiasts say</p>
-        </div>
-        <div class="testimonial-container">
-            <!-- Traditional Praise -->
-            <div class="testimonial-card tradition-style">
-                <h4>Traditional Excellence</h4>
-                <p class="testimonial-text">"MashaAllah, hafsoo fragrance ki khushbu mein wo pakeezgi aur miyar hai jo aaj kal nayab hai. Inka Oudh aur Attar dono hi lutf-e-bala hain. Bohat sari duayen aur barkat ki tamanna!"</p>
-                <div class="testimonial-author">Sikandar Hayat Baba</div>
-                <div style="font-size: 0.8rem; color: var(--accent-color); margin-top: 5px;">Spiritual Scholar</div>
+        <!-- Products Section -->
+        <section id="products">
+            <div class="section-title">
+                <p>Our Masterpieces</p>
+                <h2>Luxury Collection</h2>
             </div>
-
-            <!-- Modern Review -->
-            <div class="testimonial-card modern-style">
-                <div class="stars">⭐⭐⭐⭐⭐</div>
-                <p class="testimonial-text" style="font-family: 'Outfit', sans-serif; font-style: normal;">"Absolutely impressed by the longevity and projection of these scents. The 'Oudh Al-Hani' is a masterpiece. Highly recommended for those who appreciate premium quality at an affordable price!"</p>
-                <div class="testimonial-author">Jameel Khan</div>
-                <div style="font-size: 0.8rem; color: var(--text-light); margin-top: 5px;">Professional Reviewer</div>
+            <div class="product-grid" id="product-grid">
+                <!-- Products will be injected here by script.js -->
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-logo">Hafsoo <span>Fragrance</span></div>
-            <p>The art of perfume making is a journey of the soul. We bring you the most exquisite scents from the heart of tradition.</p>
-            <div class="social-links">
-                <a href="#">FB</a>
-                <a href="#">IG</a>
-                <a href="#">YT</a>
+        <!-- Testimonials Section -->
+        <section class="testimonials-section">
+            <div class="section-title">
+                <p>Client Experiences</p>
+                <h2>Verified Reviews</h2>
             </div>
-        </div>
-        <div class="copyright">
-            &copy; 2026 Hafsoo Fragrance. All Rights Reserved. | WhatsApp: 03159831334
-        </div>
-    </footer>
+            <div class="container">
+                <div class="testimonials-grid">
+                    <article class="testimo-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="testimo-text">"MashaAllah, Hafsoo Fragrance ki khushbu mein wo pakeezgi aur miyar hai
+                            jo aj kal nayab hai!"</p>
+                        <div class="testimo-author">Sikandar Hayat</div>
+                    </article>
+                    <article class="testimo-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="testimo-text">"Absolutely impressed by the longevity. The Emerald Night is a true
+                            masterpiece of scent."</p>
+                        <div class="testimo-author">Jameel Khan</div>
+                    </article>
+                    <article class="testimo-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="testimo-text">"The packaging, the scent, the royal feel! Sultani Attar is now my
+                            signature fragrance."</p>
+                        <div class="testimo-author">Ali Usman</div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    <!-- Cart Drawer -->
-    <div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
-    <div class="cart-drawer" id="cart-drawer">
+    <!-- Cart Sidebar -->
+    <div class="cart-overlay" id="cart-overlay" data-action="toggle-cart"></div>
+    <aside class="cart-drawer" id="cart-drawer" role="complementary">
         <div class="cart-header">
-            <h3>Your Shopping Cart</h3>
-            <span class="close-cart" onclick="toggleCart()">&times;</span>
+            <h3 class="serif-font">Your Collection</h3>
+            <span class="close-cart" data-action="toggle-cart">&times;</span>
         </div>
         <div class="cart-items" id="cart-items">
-            <!-- Cart items will be injected here -->
+            <!-- Cart items injected here -->
         </div>
         <div class="cart-footer">
             <div class="cart-total">
                 <span>Total:</span>
                 <span id="cart-total-price">Rs. 0</span>
             </div>
-            <button class="btn-checkout" onclick="openCheckout()">Order via WhatsApp</button>
+            <button class="btn-checkout" onclick="openCheckout()">Checkout via WhatsApp</button>
         </div>
-    </div>
+    </aside>
 
-    <!-- Upsell Modal -->
-    <div class="modal" id="upsell-modal">
-        <div class="modal-content">
-            <div class="upsell-tag">Special Offer!</div>
-            <h2>Wait! Enhance your Scent</h2>
-            <p>Add our best-selling <strong>6ml Hafsoo Fragrance Attar</strong> to your order for just <strong>Rs. 450</strong> (Extra 25% Off)!</p>
-            <img src="C:/Users/Abbas Fahim/.gemini/antigravity/brain/884cd7da-868b-45ec-be09-56d2e194e6f4/attar_collection_premium_1772046012406.png" class="upsell-img" alt="Attar">
-            <div class="modal-footer">
-                <button class="btn-outline" onclick="closeUpsell(false)">No, Thanks</button>
-                <button class="btn-special" onclick="closeUpsell(true)">Yes, Add it!</button>
+    <!-- Smart Upsell Modal -->
+    <div class="upsell-modal" id="upsell-modal">
+        <div class="upsell-content">
+            <div class="upsell-tag">Special Majid Edition Offer</div>
+            <img src="" id="upsell-product-img" class="upsell-img" alt="Suggested Product">
+            <h3 class="upsell-title" id="upsell-product-name">Majid Special Musk</h3>
+            <div class="upsell-price" id="upsell-product-price">Rs. 1200</div>
+            <div class="upsell-btns">
+                <button class="btn btn-primary" onclick="addUpsellToCart()">Add to Order</button>
+                <button class="no-thanks" onclick="closeUpsell()">No Thanks, continue checkout</button>
             </div>
         </div>
     </div>
 
     <!-- Checkout Modal -->
     <div class="modal" id="checkout-modal">
-        <div class="modal-content" style="max-width: 600px;">
-            <span class="close-cart" style="position: absolute; right: 20px; top: 15px;" onclick="closeCheckout()">&times;</span>
-            <h2 style="margin-bottom: 2rem; color: var(--primary-color);">Complete Your Order</h2>
-            <form class="checkout-form" id="checkout-form">
+        <div class="modal-content">
+            <button class="close-cart" style="position:absolute; right:25px; top:25px; background:none; border:none;"
+                onclick="closeCheckout()">&times;</button>
+            <h2>Complete Your Order</h2>
+            <form id="checkout-form">
                 <div class="form-group">
-                    <label>Full Name</label>
-                    <input type="text" id="cust-name" placeholder="Enter your full name" required>
+                    <label for="cust-name">Full Name</label>
+                    <input type="text" id="cust-name" placeholder="Enter your name" required>
                 </div>
                 <div class="form-group">
-                    <label>Phone Number</label>
-                    <input type="tel" id="cust-phone" placeholder="e.g. 03001234567" required>
+                    <label for="cust-phone">Phone Number</label>
+                    <input type="tel" id="cust-phone" placeholder="e.g. 0300 1234567" required>
                 </div>
                 <div class="form-group">
-                    <label>Full Address</label>
-                    <textarea id="cust-address" rows="3" placeholder="House #, Street, City, Landmark" required></textarea>
+                    <label for="cust-address">Delivery Address</label>
+                    <textarea id="cust-address" placeholder="Enter your full shipping address" required
+                        rows="3"></textarea>
                 </div>
-                <div class="form-group">
-                    <label>Payment Method</label>
-                    <select id="payment-method">
-                        <option value="Cash on Delivery (COD)">Cash on Delivery (COD)</option>
-                        <option value="Bank Transfer/EasyPaisa">Bank Transfer/EasyPaisa</option>
-                    </select>
-                </div>
-                <button type="submit" class="btn-primary" style="width: 100%;">Confirm via WhatsApp</button>
+                <button type="submit" class="btn btn-primary" style="width:100%;">Confirm Order</button>
             </form>
         </div>
     </div>
 
-    <script>
-        // --- Data ---
-        const products = [
-            {
-                id: 1,
-                title: "Oudh Al-Hani",
-                category: "Premium Oudh",
-                price: 4500,
-                stock: "Only 3 Left",
-                isLowStock: true,
-                image: "C:/Users/Abbas Fahim/.gemini/antigravity/brain/884cd7da-868b-45ec-be09-56d2e194e6f4/men_perfume_sleek_1772046064343.png"
-            },
-            {
-                id: 2,
-                title: "Sultani Attar",
-                category: "Traditional",
-                price: 1800,
-                stock: "In Stock",
-                isLowStock: false,
-                image: "C:/Users/Abbas Fahim/.gemini/antigravity/brain/884cd7da-868b-45ec-be09-56d2e194e6f4/attar_collection_premium_1772046012406.png"
-            },
-            {
-                id: 3,
-                title: "Emerald Night Perfume",
-                category: "Lux EDP",
-                price: 5200,
-                stock: "In Stock",
-                isLowStock: false,
-                image: "C:/Users/Abbas Fahim/.gemini/antigravity/brain/9be7b6c9-fbb2-442d-a0c1-946a8d18c3cd/luxury_hero_fragrance_1772051478532.png"
-            },
-            {
-                id: 4,
-                title: "Royal White Musk",
-                category: "Signature",
-                price: 1200,
-                stock: "In Stock",
-                isLowStock: false,
-                image: "C:/Users/Abbas Fahim/.gemini/antigravity/brain/884cd7da-868b-45ec-be09-56d2e194e6f4/men_perfume_sleek_1772046064343.png"
-            }
-        ];
+    <!-- AI Chat Assistant UI -->
+    <div class="ai-greeting-popup" id="aiGreetingPopup">
+        <div class="typing-dots" id="greetingTyping">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+        <div id="greetingText" style="display:none;">Hi 👋 Welcome to Haafsoo Fragrance! How can I help you today?</div>
+    </div>
+    <button class="ai-chat-toggle" id="aiChatToggle" aria-label="Open AI Assistant" onclick="toggleAIChat()">
+        <svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor">
+            <path
+                d="M12 2C6.477 2 2 6.477 2 12c0 1.821.487 3.53 1.338 5L2 22l5-1.338c1.47.851 3.179 1.338 5 1.338 5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18c-1.477 0-2.863-.404-4.048-1.104l-.29-.172-2.986.797.797-2.986-.172-.29A7.953 7.953 0 014 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z" />
+        </svg>
+    </button>
 
-        const upsellProduct = {
-            id: 'upsell',
-            title: "Musk-e-Hani Attar (6ml)",
-            price: 450
-        };
+    <div class="ai-chat-window" id="aiChatWindow">
+        <div class="ai-chat-header">
+            <div>
+                <div style="font-weight: bold; font-size: 1rem;">Hafsoo Assistant</div>
+                <div style="font-size: 0.75rem; opacity: 0.8;">Expert Fragrance Guide</div>
+            </div>
+            <div style="display: flex; gap: 10px;">
+                <button onclick="clearChat()" title="Clear Chat"
+                    style="color: white; font-size: 1.2rem; background:none; border:none; cursor:pointer;">&#128465;</button>
+                <button onclick="toggleAIChat()" title="Minimize"
+                    style="color: white; font-size: 1.2rem; background:none; border:none; cursor:pointer;">&minus;</button>
+            </div>
+        </div>
+        <div class="ai-chat-messages" id="aiChatMessages">
+            <div class="ai-bubble">Assalam-o-Alaikum! Welcome to Hafsoo Fragrance. I am your AI guide. How can I help
+                you find your signature scent today?</div>
+        </div>
+        <div class="ai-typing" id="aiTyping">Hafsoo is typing...</div>
+        <div class="ai-chat-input-area">
+            <input type="text" id="aiChatInput" placeholder="Ask about our perfumes..." autocomplete="off">
+            <button id="aiSendBtn">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                    <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+                </svg>
+            </button>
+        </div>
+    </div>
 
-        let cart = [];
+    <!-- WhatsApp Floating Action -->
+    <a href="https://api.whatsapp.com/send?phone=923159831334&text=Assalam-o-Alaikum" class="float-wa" target="_blank"
+        aria-label="Contact us on WhatsApp">
+        <svg viewBox="0 0 24 24">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
+        </svg>
+    </a>
 
-        // --- Core Functions ---
-
-        function initProducts() {
-            const grid = document.getElementById('product-grid');
-            grid.innerHTML = products.map(p => `
-                <div class="product-card">
-                    <img src="${p.image}" class="product-image" alt="${p.title}">
-                    <div class="product-info">
-                        <span class="product-category">${p.category}</span>
-                        <h3 class="product-title">${p.title}</h3>
-                        <div class="product-price">Rs. ${p.price}</div>
-                        <span class="stock-status ${p.isLowStock ? 'stock-low' : 'stock-in'}">${p.stock}</span>
-                        <button class="btn-add" onclick="handleOrderClick(${p.id})">ORDER NOW</button>
+    <footer>
+        <div class="container">
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; text-align: left; margin-bottom: 40px;">
+                <div>
+                    <div class="footer-logo" style="text-align: left; margin-bottom: 15px;">Hafsoo
+                        <span>Fragrance</span>
                     </div>
+                    <p style="font-size: 0.9rem; opacity: 0.8;">The art of perfume making is a journey of the soul,
+                        capturing moments in timeless scents. Crafted with passion, worn with pride.</p>
                 </div>
-            `).join('');
-        }
-
-        // Handle 'Order Now' - Opens Upsell first
-        let pendingProductId = null;
-        function handleOrderClick(productId) {
-            pendingProductId = productId;
-            document.getElementById('upsell-modal').style.display = 'flex';
-        }
-
-        function closeUpsell(addBonus) {
-            document.getElementById('upsell-modal').style.display = 'none';
-            
-            // Add original product
-            const product = products.find(p => p.id === pendingProductId);
-            if (product) addToCart(product);
-
-            // Add bonus if requested
-            if (addBonus) {
-                addToCart(upsellProduct);
-            }
-            
-            toggleCart(true); // Show floating cart drawer
-            pendingProductId = null;
-        }
-
-        function addToCart(product) {
-            cart.push(product);
-            updateCartUI();
-        }
-
-        function removeFromCart(index) {
-            cart.splice(index, 1);
-            updateCartUI();
-        }
-
-        function updateCartUI() {
-            const cartItemsContainer = document.getElementById('cart-items');
-            const cartCount = document.getElementById('cart-count');
-            const cartTotal = document.getElementById('cart-total-price');
-
-            cartCount.innerText = cart.length;
-            
-            if (cart.length === 0) {
-                cartItemsContainer.innerHTML = '<p style="text-align:center; color:#999; margin-top:2rem;">Your cart is empty.</p>';
-                cartTotal.innerText = 'Rs. 0';
-                return;
-            }
-
-            let total = 0;
-            cartItemsContainer.innerHTML = cart.map((item, index) => {
-                total += item.price;
-                return `
-                    <div class="cart-item">
-                        <img src="${item.image || 'C:/Users/Abbas Fahim/.gemini/antigravity/brain/884cd7da-868b-45ec-be09-56d2e194e6f4/attar_collection_premium_1772046012406.png'}" class="cart-item-img">
-                        <div class="cart-item-info">
-                            <div class="cart-item-title">${item.title}</div>
-                            <div class="cart-item-price">Rs. ${item.price}</div>
-                            <span class="remove-item" onclick="removeFromCart(${index})">Remove</span>
-                        </div>
+                <div>
+                    <h4
+                        style="color: var(--accent-gold); margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px;">
+                        Shop</h4>
+                    <ul style="list-style: none; font-size: 0.9rem; line-height: 2;">
+                        <li>Oudh Collection</li>
+                        <li>Traditional Attars</li>
+                        <li>Luxury EDP</li>
+                        <li>Signature Blends</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4
+                        style="color: var(--accent-gold); margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px;">
+                        Support</h4>
+                    <ul style="list-style: none; font-size: 0.9rem; line-height: 2;">
+                        <li>Customer Care</li>
+                        <li>Shipping Policy</li>
+                        <li>Refund Policy</li>
+                        <li>Privacy Policy</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4
+                        style="color: var(--accent-gold); margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px;">
+                        Connect</h4>
+                    <div style="display: flex; gap: 15px;">
+                        <span
+                            style="border: 1px solid var(--accent-gold); padding: 5px 10px; border-radius: 4px; font-size: 0.8rem;">FB</span>
+                        <span
+                            style="border: 1px solid var(--accent-gold); padding: 5px 10px; border-radius: 4px; font-size: 0.8rem;">IG</span>
+                        <span
+                            style="border: 1px solid var(--accent-gold); padding: 5px 10px; border-radius: 4px; font-size: 0.8rem;">WA</span>
                     </div>
-                `;
-            }).join('');
+                    <p style="margin-top: 15px; font-size: 0.9rem;">Client Care: 03159831334</p>
+                </div>
+            </div>
+            <div class="copyright" style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
+                &copy; 2026 Hafsoo Fragrance. | All Rights Reserved.
+            </div>
+        </div>
+    </footer>
 
-            cartTotal.innerText = `Rs. ${total}`;
-        }
-
-        function toggleCart(forceOpen = false) {
-            const drawer = document.getElementById('cart-drawer');
-            const overlay = document.getElementById('cart-overlay');
-            
-            if (forceOpen || !drawer.classList.contains('active')) {
-                drawer.classList.add('active');
-                overlay.style.display = 'block';
-            } else {
-                drawer.classList.remove('active');
-                overlay.style.display = 'none';
-            }
-        }
-
-        // --- Checkout & WhatsApp ---
-
-        function openCheckout() {
-            if (cart.length === 0) {
-                alert("Your cart is empty!");
-                return;
-            }
-            document.getElementById('checkout-modal').style.display = 'flex';
-        }
-
-        function closeCheckout() {
-            document.getElementById('checkout-modal').style.display = 'none';
-        }
-
-        document.getElementById('checkout-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const name = document.getElementById('cust-name').value;
-            const phone = document.getElementById('cust-phone').value;
-            const address = document.getElementById('cust-address').value;
-            const payment = document.getElementById('payment-method').value;
-
-            // Build Order Summary
-            let itemsText = cart.map(item => `- ${item.title} (Rs. ${item.price})`).join('%0A');
-            let total = cart.reduce((sum, item) => sum + item.price, 0);
-
-            const waNumber = "923159831334";
-            const message = `*NEW ORDER - UHafsoo Fragrance*%0A%0A` +
-                            `*Customer:* ${name}%0A` +
-                            `*Phone:* ${phone}%0A` +
-                            `*Address:* ${address}%0A%0A` +
-                            `*Products:*%0A${itemsText}%0A%0A` +
-                            `*Total Price:* Rs. ${total}%0A` +
-                            `*Payment Method:* ${payment}%0A%0A` +
-                            `Please confirm my order. Thank you!`;
-
-            window.open(`https://wa.me/${waNumber}?text=${message}`, '_blank');
-        });
-
-        // Initialize
-        initProducts();
-    </script>
+    <!-- Final Scripts -->
+    <script src="script.js"></script>
 </body>
+
 </html>
